@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de la Compra</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js via CDN for bar graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de la Compra</h1>
+        <form id="addForm">
+            <input type="text" id="productName" placeholder="Producto" required>
+            <input type="number" id="productQuantity" placeholder="Cantidad" min="1" value="1" required>
+            <button type="submit">Añadir a la lista</button>
+        </form>
+        <ul id="shoppingList"></ul>
+        <button id="clearList" class="clear">Vaciar lista</button>
+        <h2>Productos más añadidos</h2>
+        <canvas id="statsChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
