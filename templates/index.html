@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <form action="/add" method="post">
+        <input type="text" name="item" placeholder="Add item" required>
+        <button type="submit">Add</button>
+    </form>
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item }}
+                <form action="/delete/{{ loop.index0 }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% else %}
+            <li>No items yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
